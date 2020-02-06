@@ -1,7 +1,8 @@
 <?php
-class Home{
+class Home extends Controller{
     function SayHi(){
-        echo "Home - sayhi";
+        $teo = $this->model("StudentModel");
+        echo $teo->GetStudents();
     }
 
     function Show(){

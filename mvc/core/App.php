@@ -14,7 +14,8 @@ class App{
             unset($urls[0]);
         }
         require_once "./mvc/controllers/".$this->controller.".php";
-
+        $this->controller = new $this->controller;
+        
         // handle action
         if(isset($urls[1])){
             if(method_exists($this->controller, $urls[1])){
