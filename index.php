@@ -1,6 +1,5 @@
 <?php
-
-echo "<h1>hello</h1>";
-phpinfo()
-
-?>
+session_start();
+require_once "./mvc/Bridge.php";
+$myApp = new App();
+?> 
