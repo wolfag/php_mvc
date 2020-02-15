@@ -9,11 +9,11 @@ class App{
         $urls = $this->UrlProcess();
 
         // handle controller
-        if(file_exists("./mvc/controllers/".$urls[0].".php")){
+        if(file_exists("./mvc/controllers/{$urls[0]}.php")){
             $this->controller = $urls[0];
             unset($urls[0]);
         }
-        require_once "./mvc/controllers/".$this->controller.".php";
+        require_once "./mvc/controllers/{$this->controller}.php";
         $this->controller = new $this->controller;
         
         // handle action
