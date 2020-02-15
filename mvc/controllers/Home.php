@@ -4,7 +4,7 @@ class Home extends Controller
     public function SayHi()
     {
         $teo = $this->model("StudentModel");
-        echo $teo->GetStudents();
+        echo $teo->Test();
     }
 
     public function Show()

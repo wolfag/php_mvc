@@ -6,6 +6,11 @@ class StudentModel extends DB
         return $a+$b;
     }
 
+    public function Test()
+    {
+        return "Ti";
+    }
+
     public function GetStudents()
     {
         $sql = "select * from student";
