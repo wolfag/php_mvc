@@ -1,16 +1,18 @@
 <?php
-class StudentModel{
-
-    public function Sum($a, $b){
+class StudentModel extends DB
+{
+    public function Sum($a, $b)
+    {
         return $a+$b;
     }
 
-    public function GetStudents(){
-        return "Teo";
+    public function GetStudents()
+    {
+        $sql = "select * from student";
+        return mysqli_query($this->conn, $sql);
     }
 
-    public function AddStudent(){
-
+    public function AddStudent()
+    {
     }
 }
-?>

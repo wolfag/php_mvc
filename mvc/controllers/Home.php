@@ -22,4 +22,14 @@ class Home extends Controller
             'title'=>'test sum function'
         ]);
     }
+
+    public function Students()
+    {
+        $model = $this->model("StudentModel");
+        $data = $model->GetStudents();
+        $this->view('master-layout1', [
+            'page'=>'list-student',
+            'students'=>$data
+        ]);
+    }
 }
