@@ -1,6 +1,14 @@
 <?php
 class Home extends Controller
 {
+    public function Index(...$params)
+    {
+        $this->view('master1', [
+            'folder'=>$params[0],
+            'page'=>$params[1]
+        ]);
+    }
+
     public function SayHi()
     {
         $teo = $this->model("StudentModel");
@@ -16,7 +24,7 @@ class Home extends Controller
     {
         $model = $this->model("StudentModel");
         $data = $model->Sum($a, $b);
-        $this->view('master-layout2', [
+        $this->view('master1', [
             'page'=>'sum',
             'number'=>$data,
             'title'=>'test sum function'
@@ -27,7 +35,7 @@ class Home extends Controller
     {
         $model = $this->model("StudentModel");
         $data = $model->GetStudents();
-        $this->view('master-layout1', [
+        $this->view('master1', [
             'page'=>'list-student',
             'students'=>$data
         ]);
